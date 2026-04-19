@@ -56,9 +56,10 @@ export function renderServices() {
         <div class="services-grid">
           ${siteContent.services
             .map(
-              (service) => `
-                <article class="service-card">
+              (service, index) => `
+                <article class="service-card" data-service-tone="${index + 1}">
                   <span class="service-card-glow" aria-hidden="true"></span>
+                  <p class="service-kicker">Service 0${index + 1}</p>
                   <div class="card-icon" aria-hidden="true">${serviceIcons[service.title] || service.icon}</div>
                   <h3>${service.title}</h3>
                   <p>${service.description}</p>
@@ -140,6 +141,7 @@ export function renderPricing() {
               (plan, index) => `
                 <article class="pricing-card ${plan.featured ? "featured" : ""}" data-tier="${tierNames[index] || "Tier"}">
                   <p class="tier-label">${tierNames[index] || "Tier"} Build Tier</p>
+                  <div class="tier-bar" aria-hidden="true"></div>
                   <h3>${plan.title}</h3>
                   <p class="price">${plan.price}</p>
                   <p>${plan.description}</p>
