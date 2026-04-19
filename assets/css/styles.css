@@ -347,11 +347,21 @@ textarea {
   height: clamp(6rem, 18vw, 9rem);
   margin-bottom: 1.35rem;
   border-radius: 1.1rem;
+  border: 1px solid rgba(126, 171, 220, 0.14);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(6, 10, 18, 0.16), rgba(6, 10, 18, 0.82)),
+    radial-gradient(circle at 50% 55%, rgba(41, 182, 246, 0.08), transparent 46%),
+    linear-gradient(180deg, rgba(9, 14, 25, 0.92), rgba(7, 11, 20, 0.96));
   background-image: url("../images/logo.png?v=20260419-2");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 165%;
-  filter: drop-shadow(0 0 18px rgba(41, 182, 246, 0.18));
+  background-size: 150%;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 0 28px rgba(0, 0, 0, 0.28),
+    0 18px 38px rgba(3, 8, 18, 0.32),
+    0 0 24px rgba(41, 182, 246, 0.08);
+  filter: drop-shadow(0 0 20px rgba(41, 182, 246, 0.22)) saturate(1.06) contrast(1.08);
 }
 
 .hero-copy::before {
@@ -1107,11 +1117,16 @@ textarea {
   flex-shrink: 0;
   display: block;
   border-radius: 0.75rem;
+  border: 1px solid rgba(126, 171, 220, 0.12);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(6, 10, 18, 0.14), rgba(6, 10, 18, 0.8)),
+    linear-gradient(180deg, rgba(9, 14, 25, 0.9), rgba(7, 11, 20, 0.94));
   background-image: url("../images/logo.png?v=20260419-2");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 182%;
-  filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.14));
+  background-size: 172%;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 16px rgba(139, 92, 246, 0.08);
+  filter: drop-shadow(0 0 14px rgba(139, 92, 246, 0.18)) saturate(1.04) contrast(1.05);
 }
 
 .footer-shell {
