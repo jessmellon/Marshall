@@ -1,0 +1,131 @@
+import {
+  renderAbout,
+  renderContact,
+  renderFaq,
+  renderPricing,
+  renderProcess,
+  renderServices,
+} from "./components.js";
+
+const roots = {
+  services: document.querySelector("#services-root"),
+  about: document.querySelector("#about-root"),
+  process: document.querySelector("#process-root"),
+  pricing: document.querySelector("#pricing-root"),
+  faq: document.querySelector("#faq-root"),
+  contact: document.querySelector("#contact-root"),
+};
+
+roots.services.innerHTML = renderServices();
+roots.about.innerHTML = renderAbout();
+roots.process.innerHTML = renderProcess();
+roots.pricing.innerHTML = renderPricing();
+roots.faq.innerHTML = renderFaq();
+roots.contact.innerHTML = renderContact();
+
+document.querySelector("#year").textContent = String(new Date().getFullYear());
+
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.querySelector("#nav-menu");
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = navMenu.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  navMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+}
+
+const form = document.querySelector("#contact-form");
+const status = document.querySelector("#form-status");
+
+const fieldRules = {
+  name: {
+    validate: (value) => value.trim().length >= 2,
+    message: "Please enter your name.",
+  },
+  email: {
+    validate: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim()),
+    message: "Please enter a valid email address.",
+  },
+  budget: {
+    validate: (value) => value.trim().length >= 2,
+    message: "Please share a budget range or amount.",
+  },
+  intendedUse: {
+    validate: (value) => value.trim().length > 0,
+    message: "Please select the intended use.",
+  },
+  message: {
+    validate: (value) => value.trim().length >= 12,
+    message: "Please add a few details so the request is easier to review.",
+  },
+};
+
+function setFieldError(name, message = "") {
+  const errorNode = document.querySelector(`[data-error-for="${name}"]`);
+  const field = form.elements[name];
+
+  if (errorNode) {
+    errorNode.textContent = message;
+  }
+
+  if (field) {
+    field.setAttribute("aria-invalid", message ? "true" : "false");
+  }
+}
+
+function validateField(name) {
+  const field = form.elements[name];
+  const rule = fieldRules[name];
+
+  if (!field || !rule) {
+    return true;
+  }
+
+  const isValid = rule.validate(field.value);
+  setFieldError(name, isValid ? "" : rule.message);
+  return isValid;
+}
+
+if (form && status) {
+  Object.keys(fieldRules).forEach((name) => {
+    const field = form.elements[name];
+    if (field) {
+      field.addEventListener("blur", () => validateField(name));
+      field.addEventListener("input", () => {
+        if (field.getAttribute("aria-invalid") === "true") {
+          validateField(name);
+        }
+      });
+    }
+  });
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const isValid = Object.keys(fieldRules).every((name) => validateField(name));
+
+    if (!isValid) {
+      status.textContent = "Please fix the highlighted fields and try again.";
+      status.className = "form-status error";
+      return;
+    }
+
+    const formData = new FormData(form);
+    const requestSummary = Object.fromEntries(formData.entries());
+    console.info("Placeholder form submission:", requestSummary);
+
+    form.reset();
+    Object.keys(fieldRules).forEach((name) => setFieldError(name, ""));
+    status.textContent =
+      "Thanks! Your request has been captured in this demo. Connect this form to your email or backend next.";
+    status.className = "form-status success";
+  });
+}
