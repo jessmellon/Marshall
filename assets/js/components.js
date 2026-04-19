@@ -16,8 +16,8 @@ export function renderServices() {
       <div class="container">
         ${renderSectionHeader(
           "Services",
-          "Services designed to turn PC uncertainty into confident decisions.",
-          "Whether you need a complete recommendation or a sharp second opinion, the focus stays on clear guidance, sensible value, and parts that make sense together."
+          "Practical services that help you avoid wasting money on the wrong parts.",
+          "Choose the level of help you need, from a custom build plan to live guidance and troubleshooting support."
         )}
         <div class="services-grid">
           ${siteContent.services
@@ -43,7 +43,7 @@ export function renderAbout() {
       <div class="container">
         ${renderSectionHeader(
           "About",
-          "Personalized advice built around what you actually need.",
+          "A simpler, smarter way to plan your PC.",
           siteContent.about.intro
         )}
         <div class="content-layout">
@@ -68,8 +68,8 @@ export function renderProcess() {
       <div class="container">
         ${renderSectionHeader(
           "Process",
-          "A simple process, handled with much more care than a generic parts list.",
-          "The workflow is intentionally straightforward so you can make a good decision quickly, without losing the benefit of personalized guidance."
+          "A clear process that keeps the whole decision simple.",
+          "Stop guessing and get it right the first time with a plan that is built around your goals, not a generic template."
         )}
         <div class="process-grid">
           ${siteContent.process
@@ -95,8 +95,8 @@ export function renderPricing() {
       <div class="container">
         ${renderSectionHeader(
           "Pricing",
-          "Straightforward options for how much guidance you want.",
-          "Starter pricing is designed to feel approachable while still signaling thoughtful, personalized service rather than one-size-fits-all advice."
+          "Straightforward pricing for personalized help.",
+          "Pick the level of support that fits where you are, from a custom plan to full guidance."
         )}
         <div class="pricing-grid">
           ${siteContent.pricing
@@ -111,7 +111,7 @@ export function renderPricing() {
                   </ul>
                   <p class="price-note">${plan.note}</p>
                   <a class="button ${plan.featured ? "button-primary" : "button-secondary"} pricing-button" href="#contact">
-                    ${plan.featured ? "Reserve a Call" : "Start Here"}
+                    ${plan.featured ? "Book a Consultation" : "Get My Plan"}
                   </a>
                 </article>
               `
@@ -119,7 +119,7 @@ export function renderPricing() {
             .join("")}
         </div>
         <p class="local-note">
-          <strong>Note:</strong> Local hands-on help may be available by request depending on location and scheduling.
+          <strong>Note:</strong> Local hands-on build assistance may be available upon request.
         </p>
       </div>
     </section>
@@ -132,8 +132,8 @@ export function renderTestimonials() {
       <div class="container">
         ${renderSectionHeader(
           "Testimonials",
-          "Social proof space, ready for real client wins.",
-          "These are placeholder testimonials for launch prep. Swap them with real feedback as soon as the first few projects are complete."
+          "Early social proof placeholders for launch.",
+          "Replace these as soon as the first real client feedback comes in."
         )}
         <div class="faq-grid testimonials-grid">
           ${siteContent.testimonials
@@ -159,8 +159,8 @@ export function renderFaq() {
       <div class="container">
         ${renderSectionHeader(
           "FAQ",
-          "Clear answers before you spend a dollar.",
-          "A few of the most common questions from first-time builders, families, and buyers trying to avoid expensive mistakes."
+          "Answers for first-time builders and careful buyers.",
+          "A few quick answers to common questions before you get started."
         )}
         <div class="faq-grid">
           ${siteContent.faqs
@@ -185,8 +185,8 @@ export function renderContact() {
       <div class="container">
         ${renderSectionHeader(
           "Contact",
-          "Tell me what you need, and I’ll help you choose the right next step.",
-          "Use the form below to share your goals, budget, and what stage you are in. The form includes front-end validation and a placeholder success state for launch prep."
+          "Let’s Build Your PC the Right Way",
+          "Tell me a little about what you’re looking for and I’ll take it from there."
         )}
         <div class="contact-shell">
           <div class="contact-grid">
@@ -214,31 +214,51 @@ export function renderContact() {
                 <p id="budget-error" class="field-error" data-error-for="budget" aria-live="polite"></p>
               </div>
               <div class="field-group">
-                <label for="intended-use">Intended use</label>
+                <label for="intended-use">What will you use this PC for?</label>
                 <select id="intended-use" name="intendedUse" aria-describedby="intendedUse-error" required>
                   <option value="">Select one</option>
                   <option>Gaming</option>
-                  <option>School / Homework</option>
-                  <option>Home / Family Use</option>
-                  <option>Work / Productivity</option>
-                  <option>Upgrade / Troubleshooting</option>
+                  <option>Work</option>
+                  <option>Streaming</option>
+                  <option>General use</option>
+                  <option>School</option>
                 </select>
                 <p id="intendedUse-error" class="field-error" data-error-for="intendedUse" aria-live="polite"></p>
+              </div>
+              <div class="field-group">
+                <label for="timeline">Timeline</label>
+                <select id="timeline" name="timeline" aria-describedby="timeline-error" required>
+                  <option value="">Select one</option>
+                  <option>ASAP</option>
+                  <option>1-2 weeks</option>
+                  <option>Just exploring</option>
+                </select>
+                <p id="timeline-error" class="field-error" data-error-for="timeline" aria-live="polite"></p>
+              </div>
+              <div class="field-group">
+                <label for="help-type">What do you need help with?</label>
+                <select id="help-type" name="helpType" aria-describedby="helpType-error" required>
+                  <option value="">Select one</option>
+                  <option>Build plan</option>
+                  <option>Consultation</option>
+                  <option>Troubleshooting</option>
+                </select>
+                <p id="helpType-error" class="field-error" data-error-for="helpType" aria-live="polite"></p>
               </div>
               <div class="field-group">
                 <label for="message">Message</label>
                 <textarea
                   id="message"
                   name="message"
-                  placeholder="Share what you need help with, any parts you already own, and your timeline."
+                  placeholder="Share your goals, any parts you already picked, and anything else I should know."
                   aria-describedby="message-error"
                   required
                 ></textarea>
                 <p id="message-error" class="field-error" data-error-for="message" aria-live="polite"></p>
               </div>
-              <p class="help-text">A real backend or email form service can be connected when the site goes live.</p>
+              <p class="help-text">Built specifically for your needs. Clear, honest recommendations with no upselling.</p>
               <div class="contact-actions">
-                <button class="button button-primary" type="submit">Send Request</button>
+                <button class="button button-primary" type="submit">Get My Plan</button>
               </div>
               <p class="form-status" id="form-status" aria-live="polite"></p>
             </form>
@@ -248,16 +268,16 @@ export function renderContact() {
                 <h3>What helps most</h3>
                 <ul class="contact-list">
                   <li>Your budget range</li>
-                  <li>What the computer will be used for</li>
-                  <li>Whether you are starting from scratch or upgrading</li>
+                  <li>What you want the PC to do</li>
+                  <li>Whether you need a build plan, consultation, or troubleshooting</li>
                 </ul>
               </aside>
               <aside class="contact-panel">
-                <h3>Future social links</h3>
+                <h3>Why clients choose this</h3>
                 <ul class="social-placeholder">
-                  <li>Instagram link placeholder</li>
-                  <li>Facebook link placeholder</li>
-                  <li>Discord or YouTube placeholder</li>
+                  <li>Stop guessing and get it right the first time</li>
+                  <li>Avoid wasting money on the wrong parts</li>
+                  <li>Clear, honest recommendations with no upselling</li>
                 </ul>
               </aside>
             </div>

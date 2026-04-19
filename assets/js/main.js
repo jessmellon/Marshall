@@ -69,6 +69,14 @@ const fieldRules = {
     validate: (value) => value.trim().length > 0,
     message: "Please select the intended use.",
   },
+  timeline: {
+    validate: (value) => value.trim().length > 0,
+    message: "Please select your timeline.",
+  },
+  helpType: {
+    validate: (value) => value.trim().length > 0,
+    message: "Please select what you need help with.",
+  },
   message: {
     validate: (value) => value.trim().length >= 12,
     message: "Please add a few details so the request is easier to review.",
@@ -134,8 +142,7 @@ if (form && status) {
 
     form.reset();
     Object.keys(fieldRules).forEach((name) => setFieldError(name, ""));
-    status.textContent =
-      "Thanks! Your request has been captured in this demo. Connect this form to your email or backend next.";
+    status.textContent = "Thanks! I’ll review your request and get back to you within 24–48 hours.";
     status.className = "form-status success";
   });
 }

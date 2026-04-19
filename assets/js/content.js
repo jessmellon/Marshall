@@ -3,139 +3,139 @@ export const siteContent = {
     {
       title: "Custom PC Build Consulting",
       description:
-        "Receive a build direction tailored to how the system will actually be used, from entry-level gaming to more demanding performance targets.",
+        "Get a complete, personalized parts list built around your needs—gaming, work, streaming, or everyday use.",
       icon: "01",
     },
     {
       title: "Parts List + Compatibility Check",
       description:
-        "Review a parts list before checkout to catch compatibility issues, weak value picks, and missing essentials.",
+        "Already picked parts? I’ll review your list to make sure everything works together and you’re not overspending.",
       icon: "02",
     },
     {
       title: "Upgrade Recommendations",
       description:
-        "Identify the upgrades most likely to improve real-world performance without overspending on the wrong components.",
+        "Not ready for a full rebuild? I’ll show you exactly what to upgrade for the biggest performance boost.",
       icon: "03",
     },
     {
       title: "Virtual Build Help",
       description:
-        "Get calm, reliable guidance during the build process when you want another set of eyes before the next step.",
+        "Step-by-step guidance while you build your PC so you don’t get stuck or make costly mistakes.",
       icon: "04",
     },
     {
-      title: "Troubleshooting / Advice",
+      title: "Troubleshooting & Advice",
       description:
-        "Work through symptoms, likely causes, and practical next moves without wasting time guessing.",
+        "Having issues? I’ll help diagnose problems and get your system running properly.",
       icon: "05",
     },
   ],
   about: {
-    intro:
-      "Sharif helps clients avoid expensive mistakes and build around what matters most: performance, reliability, and value for the way they actually use their computer.",
+    intro: "Hi, I’m Marshall.",
     points: [
-      "Recommendations are grounded in practical tradeoffs, not upsells or trend-chasing.",
-      "Every plan is personalized around budget, goals, timeline, and comfort level.",
-      "The result is direct, one-on-one guidance for real buying decisions, not generic advice copied from a forum thread.",
+      "I help people build computers that actually fit their needs—without overspending or getting overwhelmed by all the options.",
+      "Most people end up buying the wrong parts, overpaying, or running into compatibility issues. My goal is to make the process simple, clear, and stress-free.",
+      "Whether you’re building your first PC or upgrading an existing one, I’ll help you make confident decisions every step of the way.",
     ],
-    supportCardTitle: "A better kind of PC advice",
+    supportCardTitle: "What you can expect",
     supportCardText:
-      "If you are building for the first time, buying for a child, improving an older system, or trying to make sense of competing part choices, the process should feel clear and manageable. That is the standard here.",
+      "Clear, honest recommendations with no upselling. Just thoughtful guidance built specifically for your needs, your budget, and the way you plan to use your PC.",
   },
   process: [
     {
-      title: "Tell me your budget and goals",
+      title: "Tell Me What You Need",
       description:
-        "Share your budget, performance goals, intended use, and any parts you already own.",
+        "Share your budget, goals, and what you’ll use your PC for.",
     },
     {
-      title: "I create your recommended plan",
+      title: "Get Your Custom Plan",
       description:
-        "You receive a focused recommendation with the right parts path, compatibility insight, and straightforward next steps.",
+        "I build a tailored parts list with clear recommendations and reasoning.",
     },
     {
-      title: "You build with confidence",
+      title: "Build With Confidence",
       description:
-        "Move forward knowing your choices make sense, your parts work together, and your budget is being used well.",
+        "Follow the plan (or get help from me) and avoid costly mistakes.",
     },
   ],
   pricing: [
     {
       title: "Build Plan",
-      price: "$79",
-      description: "Best for buyers who want a clear, personalized starting point before ordering parts.",
+      price: "$75",
+      description:
+        "A personalized build plan designed to help you buy the right parts the first time.",
       features: [
-        "Custom parts shortlist",
-        "Compatibility and fit review",
-        "Clear reasoning behind each major choice",
+        "Custom parts list",
+        "Compatibility check",
+        "Performance-focused recommendations",
+        "Affiliate links for easy purchasing",
       ],
-      note: "Ideal for first-time builders who want to buy once and buy well.",
+      note: "Best for: First-time builders",
     },
     {
       title: "Consultation Call",
-      price: "$49",
-      description: "Best for clients who want fast clarity on a build, upgrade, or existing parts list.",
+      price: "$100",
+      description:
+        "A focused one-on-one session for questions, live guidance, and real-time recommendations.",
       features: [
-        "30-minute virtual session",
-        "Live Q&A and parts feedback",
-        "Straight answers in plain language",
+        "1-on-1 call (45-60 min)",
+        "Ask anything",
+        "Live guidance + recommendations",
       ],
       featured: true,
-      note: "A strong first step when you want expert input without committing to a full package yet.",
+      note: "Best for: People who want real-time help",
     },
     {
       title: "Full Guidance Package",
-      price: "$149",
-      description: "Best for clients who want hands-on guidance from early planning through final decisions.",
+      price: "$150",
+      description:
+        "The best-value option for clients who want guidance from planning through follow-up support.",
       features: [
-        "Custom build plan and review",
-        "Consultation support",
-        "Follow-up questions after delivery",
+        "Custom build plan",
+        "Consultation call",
+        "Build support + follow-up questions",
       ],
-      note: "Designed for higher-confidence buying decisions and more involved projects.",
+      note: "Best value",
     },
   ],
   testimonials: [
     {
-      quote:
-        "Placeholder testimonial: Sharif made the whole process feel manageable and saved me from buying parts that would not have matched my goals.",
-      name: "Future client name",
-      role: "First-time PC builder",
+      quote: "Saved me from buying the wrong GPU and stayed within my budget.",
+      name: "Future Client",
+      role: "Testimonial placeholder",
     },
     {
-      quote:
-        "Placeholder testimonial: I came in with a rough list and left with a much better plan, more confidence, and no wasted budget.",
-      name: "Future client name",
-      role: "Gaming PC customer",
-    },
-    {
-      quote:
-        "Placeholder testimonial: The advice was clear, honest, and easy to understand, even though I did not know much about computers.",
-      name: "Future client name",
-      role: "Parent buying a PC",
+      quote: "Made the entire process way less stressful.",
+      name: "Future Client",
+      role: "Testimonial placeholder",
     },
   ],
   faqs: [
     {
-      question: "Do I need to know anything about computers before starting?",
+      question: "Do I need to know anything about computers?",
       answer:
-        "No. The process is designed to be approachable for beginners, with clear explanations and recommendations matched to your goals.",
+        "Not at all. I’ll guide you through everything in plain, simple language.",
     },
     {
       question: "Can you help me stay within my budget?",
       answer:
-        "Yes. Budget is one of the first priorities, so every recommendation is shaped around getting the best result for what you want to spend.",
+        "Yes—that’s one of the main goals. I optimize builds to get the best performance for your price range.",
     },
     {
-      question: "Do you help with gaming PCs?",
+      question: "Do you only help with gaming PCs?",
       answer:
-        "Absolutely. Gaming systems are a core focus, whether you need a solid entry build or a stronger setup for higher performance targets.",
+        "No. I help with gaming, work setups, streaming, and general-use computers.",
     },
     {
-      question: "Can you review a parts list I already made?",
+      question: "What if I already picked parts?",
       answer:
-        "Yes. Existing lists can be reviewed for compatibility, balance, and smarter value where it matters.",
+        "Perfect—I can review your list and make sure everything works and suggest improvements.",
+    },
+    {
+      question: "Do you build the PC for me?",
+      answer:
+        "Depending on location, that may be available. Otherwise, I can guide you step-by-step virtually.",
     },
   ],
 };
