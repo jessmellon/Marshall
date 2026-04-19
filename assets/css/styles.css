@@ -114,31 +114,12 @@ textarea {
   min-width: 0;
 }
 
-.brand-mark {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.05rem;
-  min-width: 4.5rem;
-  min-height: 3.2rem;
-  padding: 0.5rem 0.65rem;
-  border-radius: 1.1rem;
-  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-  color: #fff;
-  box-shadow: var(--glow);
-  line-height: 1;
-}
-
-.brand-mark-top {
-  font-size: 0.56rem;
-  letter-spacing: 0.18em;
-  font-weight: 700;
-}
-
-.brand-mark-bottom {
-  font-size: 1.05rem;
-  letter-spacing: 0.08em;
-  font-weight: 800;
+.brand-logo {
+  width: clamp(4.5rem, 12vw, 6rem);
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 0 16px rgba(41, 182, 246, 0.16));
 }
 
 .brand-text {
@@ -844,6 +825,20 @@ textarea {
 
 .site-footer {
   padding: 2rem 0 3rem;
+}
+
+.footer-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.footer-logo {
+  width: 3.6rem;
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.14));
 }
 
 .footer-shell {
