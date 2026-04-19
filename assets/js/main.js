@@ -1,28 +1,3 @@
-import {
-  renderAbout,
-  renderContact,
-  renderFaq,
-  renderPricing,
-  renderProcess,
-  renderServices,
-  renderTestimonials,
-} from "./components.js";
-
-[
-  ["#services-root", renderServices],
-  ["#about-root", renderAbout],
-  ["#process-root", renderProcess],
-  ["#pricing-root", renderPricing],
-  ["#testimonials-root", renderTestimonials],
-  ["#faq-root", renderFaq],
-  ["#contact-root", renderContact],
-].forEach(([selector, render]) => {
-  const root = document.querySelector(selector);
-  if (root) {
-    root.innerHTML = render();
-  }
-});
-
 document.querySelectorAll(".hero-copy, .hero-panel, .service-card, .content-card, .step-card, .pricing-card, .testimonial-card, .faq-item, .contact-shell, .contact-panel").forEach((element) => {
   element.classList.add("reveal");
 });

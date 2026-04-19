@@ -346,7 +346,7 @@ textarea {
   height: clamp(6rem, 18vw, 9rem);
   margin-bottom: 1.35rem;
   border-radius: 1.1rem;
-  background-image: url("./images/logo.png");
+  background-image: url("../images/logo.png?v=20260419-2");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 165%;
@@ -1002,7 +1002,7 @@ textarea {
   flex-shrink: 0;
   display: block;
   border-radius: 0.75rem;
-  background-image: url("./images/logo.png");
+  background-image: url("../images/logo.png?v=20260419-2");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 182%;
