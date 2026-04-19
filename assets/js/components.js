@@ -1,5 +1,39 @@
 import { siteContent } from "./content.js";
 
+const serviceIcons = {
+  "Custom PC Build Consulting": `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16h-4l-2.8 2.4c-.65.56-1.7.1-1.7-.77V16H6.5A2.5 2.5 0 0 1 4 13.5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+      <path d="M8 8.5h8M8 11.5h5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </svg>
+  `,
+  "Parts List + Compatibility Check": `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="5" y="4" width="14" height="16" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M8 8h8M8 11.5h5M9.2 16l1.5 1.5 4-4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  `,
+  "Upgrade Recommendations": `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 19V5M12 5l-4 4M12 5l4 4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M5 19h14" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </svg>
+  `,
+  "Virtual Build Help": `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <rect x="4" y="5" width="16" height="11" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.7"/>
+      <path d="M9.5 19h5M12 16v3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+      <path d="M10 9.5l4 2.5-4 2.5z" fill="currentColor"/>
+    </svg>
+  `,
+  "Troubleshooting & Advice": `
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M10 4h4l.6 2.1a6.8 6.8 0 0 1 1.8 1l2.1-.6 2 3.4-1.5 1.5a6.4 6.4 0 0 1 0 2.1l1.5 1.5-2 3.4-2.1-.6a6.8 6.8 0 0 1-1.8 1L14 20h-4l-.6-2.1a6.8 6.8 0 0 1-1.8-1l-2.1.6-2-3.4L5 12.6a6.4 6.4 0 0 1 0-2.1L3.5 9l2-3.4 2.1.6a6.8 6.8 0 0 1 1.8-1z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+      <circle cx="12" cy="12" r="2.2" fill="none" stroke="currentColor" stroke-width="1.7"/>
+    </svg>
+  `,
+};
+
 function renderSectionHeader(label, title, intro) {
   return `
     <div class="section-header">
@@ -24,7 +58,7 @@ export function renderServices() {
             .map(
               (service) => `
                 <article class="service-card">
-                  <div class="card-icon" aria-hidden="true">${service.icon}</div>
+                  <div class="card-icon" aria-hidden="true">${serviceIcons[service.title] || service.icon}</div>
                   <h3>${service.title}</h3>
                   <p>${service.description}</p>
                 </article>
@@ -135,6 +169,7 @@ export function renderTestimonials() {
           "Early social proof placeholders for launch.",
           "Replace these as soon as the first real client feedback comes in."
         )}
+        <p class="section-kicker">Trusted by beginners and gamers alike.</p>
         <div class="faq-grid testimonials-grid">
           ${siteContent.testimonials
             .map(

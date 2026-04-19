@@ -23,6 +23,10 @@ import {
   }
 });
 
+document.querySelectorAll(".hero-copy, .hero-panel, .service-card, .content-card, .step-card, .pricing-card, .testimonial-card, .faq-item, .contact-shell, .contact-panel").forEach((element) => {
+  element.classList.add("reveal");
+});
+
 document.querySelector("#year").textContent = String(new Date().getFullYear());
 
 const navToggle = document.querySelector(".nav-toggle");
@@ -48,6 +52,25 @@ if (navToggle && navMenu) {
     }
   });
 }
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.14,
+    rootMargin: "0px 0px -40px 0px",
+  }
+);
+
+document.querySelectorAll(".reveal").forEach((element) => {
+  revealObserver.observe(element);
+});
 
 const form = document.querySelector("#contact-form");
 const status = document.querySelector("#form-status");
