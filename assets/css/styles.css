@@ -290,7 +290,7 @@ textarea {
 
 .hero-grid {
   display: grid;
-  gap: 1.6rem;
+  gap: 1.9rem;
   align-items: center;
   position: relative;
 }
@@ -312,7 +312,7 @@ textarea {
 }
 
 .hero-copy {
-  padding: 2.15rem;
+  padding: 2.4rem;
   border-radius: var(--radius-lg);
   background:
     linear-gradient(180deg, rgba(10, 16, 27, 0.92), rgba(14, 20, 34, 0.82)),
@@ -325,7 +325,7 @@ textarea {
 .hero-logo-shell {
   width: min(100%, 17rem);
   height: clamp(6rem, 18vw, 9rem);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.35rem;
   border-radius: 1.1rem;
   background-image: url("./images/logo.png");
   background-repeat: no-repeat;
@@ -376,7 +376,7 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.8rem, 9vw, 5.5rem);
+  font-size: clamp(3rem, 10vw, 5.9rem);
   max-width: 10ch;
   letter-spacing: -0.03em;
 }
@@ -402,6 +402,23 @@ h3 {
   color: #d8f9ef;
   font-weight: 600;
   max-width: 45rem;
+}
+
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.2rem;
+}
+
+.hero-stats span {
+  padding: 0.62rem 0.9rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(41, 182, 246, 0.14), rgba(139, 92, 246, 0.12));
+  border: 1px solid rgba(137, 177, 214, 0.16);
+  color: #e7f3ff;
+  font-size: 0.9rem;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .hero-trust-line {
@@ -579,6 +596,32 @@ h3 {
 .content-card p,
 .testimonial-card p {
   color: var(--text-soft);
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(17, 24, 38, 0.92), rgba(12, 18, 30, 0.84)),
+    var(--surface);
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(41, 182, 246, 0.45), rgba(139, 92, 246, 0.4), transparent);
+}
+
+.service-card-glow {
+  position: absolute;
+  inset: auto -15% -35% auto;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.12), transparent 64%);
+  pointer-events: none;
 }
 
 .service-card:hover,
@@ -984,7 +1027,7 @@ textarea {
 
   .hero-grid {
     grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-    gap: 2rem;
+    gap: 2.25rem;
   }
 
   .section-band::before {

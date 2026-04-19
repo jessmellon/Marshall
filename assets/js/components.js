@@ -58,6 +58,7 @@ export function renderServices() {
             .map(
               (service) => `
                 <article class="service-card">
+                  <span class="service-card-glow" aria-hidden="true"></span>
                   <div class="card-icon" aria-hidden="true">${serviceIcons[service.title] || service.icon}</div>
                   <h3>${service.title}</h3>
                   <p>${service.description}</p>
