@@ -1,4 +1,4 @@
-document.querySelectorAll(".hero-copy, .hero-panel, .service-card, .content-card, .step-card, .pricing-card, .testimonial-card, .faq-item, .contact-shell, .contact-panel").forEach((element) => {
+document.querySelectorAll(".hero-copy, .hero-panel, .hero-side-card, .service-card, .content-card, .trust-card, .step-card, .pricing-card, .testimonial-card, .faq-item, .contact-shell, .contact-panel").forEach((element) => {
   element.classList.add("reveal");
 });
 
