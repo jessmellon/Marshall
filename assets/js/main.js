@@ -5,23 +5,23 @@ import {
   renderPricing,
   renderProcess,
   renderServices,
+  renderTestimonials,
 } from "./components.js";
 
-const roots = {
-  services: document.querySelector("#services-root"),
-  about: document.querySelector("#about-root"),
-  process: document.querySelector("#process-root"),
-  pricing: document.querySelector("#pricing-root"),
-  faq: document.querySelector("#faq-root"),
-  contact: document.querySelector("#contact-root"),
-};
-
-roots.services.innerHTML = renderServices();
-roots.about.innerHTML = renderAbout();
-roots.process.innerHTML = renderProcess();
-roots.pricing.innerHTML = renderPricing();
-roots.faq.innerHTML = renderFaq();
-roots.contact.innerHTML = renderContact();
+[
+  ["#services-root", renderServices],
+  ["#about-root", renderAbout],
+  ["#process-root", renderProcess],
+  ["#pricing-root", renderPricing],
+  ["#testimonials-root", renderTestimonials],
+  ["#faq-root", renderFaq],
+  ["#contact-root", renderContact],
+].forEach(([selector, render]) => {
+  const root = document.querySelector(selector);
+  if (root) {
+    root.innerHTML = render();
+  }
+});
 
 document.querySelector("#year").textContent = String(new Date().getFullYear());
 
@@ -39,6 +39,13 @@ if (navToggle && navMenu) {
       navMenu.classList.remove("is-open");
       navToggle.setAttribute("aria-expanded", "false");
     });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      navMenu.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
   });
 }
 
@@ -73,6 +80,9 @@ function setFieldError(name, message = "") {
   const field = form.elements[name];
 
   if (errorNode) {
+    if (!errorNode.id) {
+      errorNode.id = `${name}-error`;
+    }
     errorNode.textContent = message;
   }
 

@@ -16,8 +16,8 @@ export function renderServices() {
       <div class="container">
         ${renderSectionHeader(
           "Services",
-          "Support that helps you choose wisely before you buy.",
-          "Whether you need a full plan or just a second opinion, the focus is clear recommendations that fit your goals."
+          "Services designed to turn PC uncertainty into confident decisions.",
+          "Whether you need a complete recommendation or a sharp second opinion, the focus stays on clear guidance, sensible value, and parts that make sense together."
         )}
         <div class="services-grid">
           ${siteContent.services
@@ -68,8 +68,8 @@ export function renderProcess() {
       <div class="container">
         ${renderSectionHeader(
           "Process",
-          "A simple path from uncertainty to a confident plan.",
-          "The goal is to keep the process straightforward so you can focus on making the right decision."
+          "A simple process, handled with much more care than a generic parts list.",
+          "The workflow is intentionally straightforward so you can make a good decision quickly, without losing the benefit of personalized guidance."
         )}
         <div class="process-grid">
           ${siteContent.process
@@ -95,8 +95,8 @@ export function renderPricing() {
       <div class="container">
         ${renderSectionHeader(
           "Pricing",
-          "Starter options that make it easy to get the right level of help.",
-          "These prices are placeholders and can be updated later as the business evolves."
+          "Straightforward options for how much guidance you want.",
+          "Starter pricing is designed to feel approachable while still signaling thoughtful, personalized service rather than one-size-fits-all advice."
         )}
         <div class="pricing-grid">
           ${siteContent.pricing
@@ -109,6 +109,10 @@ export function renderPricing() {
                   <ul class="price-list">
                     ${plan.features.map((feature) => `<li>${feature}</li>`).join("")}
                   </ul>
+                  <p class="price-note">${plan.note}</p>
+                  <a class="button ${plan.featured ? "button-primary" : "button-secondary"} pricing-button" href="#contact">
+                    ${plan.featured ? "Reserve a Call" : "Start Here"}
+                  </a>
                 </article>
               `
             )
@@ -122,14 +126,41 @@ export function renderPricing() {
   `;
 }
 
+export function renderTestimonials() {
+  return `
+    <section class="content-section" id="testimonials">
+      <div class="container">
+        ${renderSectionHeader(
+          "Testimonials",
+          "Social proof space, ready for real client wins.",
+          "These are placeholder testimonials for launch prep. Swap them with real feedback as soon as the first few projects are complete."
+        )}
+        <div class="faq-grid testimonials-grid">
+          ${siteContent.testimonials
+            .map(
+              (item) => `
+                <article class="testimonial-card">
+                  <p class="testimonial-quote">“${item.quote}”</p>
+                  <p class="testimonial-name">${item.name}</p>
+                  <p class="testimonial-role">${item.role}</p>
+                </article>
+              `
+            )
+            .join("")}
+        </div>
+      </div>
+    </section>
+  `;
+}
+
 export function renderFaq() {
   return `
     <section class="content-section" id="faq">
       <div class="container">
         ${renderSectionHeader(
           "FAQ",
-          "Clear answers before you get started.",
-          "A few common questions from first-time builders, families, and people comparing upgrade options."
+          "Clear answers before you spend a dollar.",
+          "A few of the most common questions from first-time builders, families, and buyers trying to avoid expensive mistakes."
         )}
         <div class="faq-grid">
           ${siteContent.faqs
@@ -154,21 +185,21 @@ export function renderContact() {
       <div class="container">
         ${renderSectionHeader(
           "Contact",
-          "Tell me what you want to build, upgrade, or figure out.",
-          "Use the form below to share your goals. This demo form includes front-end validation and a placeholder success state."
+          "Tell me what you need, and I’ll help you choose the right next step.",
+          "Use the form below to share your goals, budget, and what stage you are in. The form includes front-end validation and a placeholder success state for launch prep."
         )}
         <div class="contact-shell">
           <div class="contact-grid">
             <form class="contact-form" id="contact-form" novalidate>
               <div class="field-group">
                 <label for="name">Name</label>
-                <input id="name" name="name" type="text" autocomplete="name" required />
-                <p class="field-error" data-error-for="name" aria-live="polite"></p>
+                <input id="name" name="name" type="text" autocomplete="name" aria-describedby="name-error" required />
+                <p id="name-error" class="field-error" data-error-for="name" aria-live="polite"></p>
               </div>
               <div class="field-group">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" required />
-                <p class="field-error" data-error-for="email" aria-live="polite"></p>
+                <input id="email" name="email" type="email" autocomplete="email" aria-describedby="email-error" required />
+                <p id="email-error" class="field-error" data-error-for="email" aria-live="polite"></p>
               </div>
               <div class="field-group">
                 <label for="budget">Budget</label>
@@ -177,13 +208,14 @@ export function renderContact() {
                   name="budget"
                   type="text"
                   placeholder="Example: $800 to $1,200"
+                  aria-describedby="budget-error"
                   required
                 />
-                <p class="field-error" data-error-for="budget" aria-live="polite"></p>
+                <p id="budget-error" class="field-error" data-error-for="budget" aria-live="polite"></p>
               </div>
               <div class="field-group">
                 <label for="intended-use">Intended use</label>
-                <select id="intended-use" name="intendedUse" required>
+                <select id="intended-use" name="intendedUse" aria-describedby="intendedUse-error" required>
                   <option value="">Select one</option>
                   <option>Gaming</option>
                   <option>School / Homework</option>
@@ -191,7 +223,7 @@ export function renderContact() {
                   <option>Work / Productivity</option>
                   <option>Upgrade / Troubleshooting</option>
                 </select>
-                <p class="field-error" data-error-for="intendedUse" aria-live="polite"></p>
+                <p id="intendedUse-error" class="field-error" data-error-for="intendedUse" aria-live="polite"></p>
               </div>
               <div class="field-group">
                 <label for="message">Message</label>
@@ -199,11 +231,12 @@ export function renderContact() {
                   id="message"
                   name="message"
                   placeholder="Share what you need help with, any parts you already own, and your timeline."
+                  aria-describedby="message-error"
                   required
                 ></textarea>
-                <p class="field-error" data-error-for="message" aria-live="polite"></p>
+                <p id="message-error" class="field-error" data-error-for="message" aria-live="polite"></p>
               </div>
-              <p class="help-text">A real backend or email form service can be connected later.</p>
+              <p class="help-text">A real backend or email form service can be connected when the site goes live.</p>
               <div class="contact-actions">
                 <button class="button button-primary" type="submit">Send Request</button>
               </div>
@@ -212,7 +245,7 @@ export function renderContact() {
 
             <div class="contact-side">
               <aside class="contact-panel">
-                <h3>What to include</h3>
+                <h3>What helps most</h3>
                 <ul class="contact-list">
                   <li>Your budget range</li>
                   <li>What the computer will be used for</li>

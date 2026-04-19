@@ -3,116 +3,139 @@ export const siteContent = {
     {
       title: "Custom PC Build Consulting",
       description:
-        "Get tailored guidance on the best build direction for gaming, school, work, or a balanced everyday setup.",
+        "Receive a build direction tailored to how the system will actually be used, from entry-level gaming to more demanding performance targets.",
       icon: "01",
     },
     {
       title: "Parts List + Compatibility Check",
       description:
-        "Review a planned parts list before you spend money so you can avoid mismatches, bottlenecks, and missing pieces.",
+        "Review a parts list before checkout to catch compatibility issues, weak value picks, and missing essentials.",
       icon: "02",
     },
     {
       title: "Upgrade Recommendations",
       description:
-        "Find out which upgrades will actually improve performance and which ones are not worth your budget right now.",
+        "Identify the upgrades most likely to improve real-world performance without overspending on the wrong components.",
       icon: "03",
     },
     {
       title: "Virtual Build Help",
       description:
-        "Ask questions during your build process and get steady guidance when you want a second set of eyes.",
+        "Get calm, reliable guidance during the build process when you want another set of eyes before the next step.",
       icon: "04",
     },
     {
       title: "Troubleshooting / Advice",
       description:
-        "Get help narrowing down issues, understanding symptoms, and deciding on practical next steps.",
+        "Work through symptoms, likely causes, and practical next moves without wasting time guessing.",
       icon: "05",
     },
   ],
   about: {
     intro:
-      "Sharif helps people avoid wasting money on the wrong parts and choose the right setup for how they actually use their computer.",
+      "Sharif helps clients avoid expensive mistakes and build around what matters most: performance, reliability, and value for the way they actually use their computer.",
     points: [
-      "The advice is practical, honest, and focused on value instead of upselling.",
-      "Every recommendation is personalized around budget, goals, and experience level.",
-      "This is one-on-one help for real decisions, not generic lists copied from the internet.",
+      "Recommendations are grounded in practical tradeoffs, not upsells or trend-chasing.",
+      "Every plan is personalized around budget, goals, timeline, and comfort level.",
+      "The result is direct, one-on-one guidance for real buying decisions, not generic advice copied from a forum thread.",
     ],
-    supportCardTitle: "Who this is for",
+    supportCardTitle: "A better kind of PC advice",
     supportCardText:
-      "If you are building your first PC, buying for a child, upgrading an aging setup, or trying to make sense of part options, the process should feel simpler. That is the goal here.",
+      "If you are building for the first time, buying for a child, improving an older system, or trying to make sense of competing part choices, the process should feel clear and manageable. That is the standard here.",
   },
   process: [
     {
       title: "Tell me your budget and goals",
       description:
-        "Share what you want the PC to do, how much you want to spend, and any parts you already have.",
+        "Share your budget, performance goals, intended use, and any parts you already own.",
     },
     {
       title: "I create your recommended plan",
       description:
-        "You get a thoughtful recommendation built around your needs, with parts guidance and clear next steps.",
+        "You receive a focused recommendation with the right parts path, compatibility insight, and straightforward next steps.",
     },
     {
       title: "You build with confidence",
       description:
-        "Move forward knowing your plan makes sense, your parts fit together, and your budget is working for you.",
+        "Move forward knowing your choices make sense, your parts work together, and your budget is being used well.",
     },
   ],
   pricing: [
     {
       title: "Build Plan",
       price: "$79",
-      description: "A custom parts recommendation and compatibility-focused build outline.",
+      description: "Best for buyers who want a clear, personalized starting point before ordering parts.",
       features: [
-        "Budget-based parts list",
-        "Use-case recommendations",
-        "Compatibility review",
+        "Custom parts shortlist",
+        "Compatibility and fit review",
+        "Clear reasoning behind each major choice",
       ],
+      note: "Ideal for first-time builders who want to buy once and buy well.",
     },
     {
       title: "Consultation Call",
       price: "$49",
-      description: "A focused conversation to answer questions, review options, or sanity-check your plan.",
+      description: "Best for clients who want fast clarity on a build, upgrade, or existing parts list.",
       features: [
-        "30-minute virtual consultation",
-        "Parts and upgrade feedback",
-        "Beginner-friendly explanations",
+        "30-minute virtual session",
+        "Live Q&A and parts feedback",
+        "Straight answers in plain language",
       ],
       featured: true,
+      note: "A strong first step when you want expert input without committing to a full package yet.",
     },
     {
       title: "Full Guidance Package",
       price: "$149",
-      description: "More hands-on support from planning through final decisions and follow-up questions.",
+      description: "Best for clients who want hands-on guidance from early planning through final decisions.",
       features: [
-        "Custom build plan",
+        "Custom build plan and review",
         "Consultation support",
-        "Follow-up troubleshooting advice",
+        "Follow-up questions after delivery",
       ],
+      note: "Designed for higher-confidence buying decisions and more involved projects.",
+    },
+  ],
+  testimonials: [
+    {
+      quote:
+        "Placeholder testimonial: Sharif made the whole process feel manageable and saved me from buying parts that would not have matched my goals.",
+      name: "Future client name",
+      role: "First-time PC builder",
+    },
+    {
+      quote:
+        "Placeholder testimonial: I came in with a rough list and left with a much better plan, more confidence, and no wasted budget.",
+      name: "Future client name",
+      role: "Gaming PC customer",
+    },
+    {
+      quote:
+        "Placeholder testimonial: The advice was clear, honest, and easy to understand, even though I did not know much about computers.",
+      name: "Future client name",
+      role: "Parent buying a PC",
     },
   ],
   faqs: [
     {
       question: "Do I need to know anything about computers before starting?",
       answer:
-        "No. The process is designed to be beginner-friendly, with plain-language advice and recommendations based on your goals.",
+        "No. The process is designed to be approachable for beginners, with clear explanations and recommendations matched to your goals.",
     },
     {
       question: "Can you help me stay within my budget?",
       answer:
-        "Yes. Budget is one of the first things considered, so the goal is always to make the most of what you want to spend.",
+        "Yes. Budget is one of the first priorities, so every recommendation is shaped around getting the best result for what you want to spend.",
     },
     {
       question: "Do you help with gaming PCs?",
       answer:
-        "Absolutely. Gaming builds are a core focus, whether you want a starter setup or a stronger performance target.",
+        "Absolutely. Gaming systems are a core focus, whether you need a solid entry build or a stronger setup for higher performance targets.",
     },
     {
       question: "Can you review a parts list I already made?",
       answer:
-        "Yes. Existing parts lists can be reviewed for compatibility, performance balance, and better value options.",
+        "Yes. Existing lists can be reviewed for compatibility, balance, and smarter value where it matters.",
     },
   ],
 };
