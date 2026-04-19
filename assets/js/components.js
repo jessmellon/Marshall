@@ -124,6 +124,7 @@ export function renderProcess() {
 }
 
 export function renderPricing() {
+  const tierNames = ["Entry", "Mid", "Pro"];
   return `
     <section class="content-section section-band section-band-spotlight" id="pricing">
       <div class="container">
@@ -135,8 +136,9 @@ export function renderPricing() {
         <div class="pricing-grid">
           ${siteContent.pricing
             .map(
-              (plan) => `
-                <article class="pricing-card ${plan.featured ? "featured" : ""}">
+              (plan, index) => `
+                <article class="pricing-card ${plan.featured ? "featured" : ""}" data-tier="${tierNames[index] || "Tier"}">
+                  <p class="tier-label">${tierNames[index] || "Tier"} Build Tier</p>
                   <h3>${plan.title}</h3>
                   <p class="price">${plan.price}</p>
                   <p>${plan.description}</p>

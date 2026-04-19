@@ -27,6 +27,10 @@ document.querySelectorAll(".hero-copy, .hero-panel, .service-card, .content-card
   element.classList.add("reveal");
 });
 
+const cursorGlow = document.createElement("div");
+cursorGlow.className = "cursor-glow";
+document.body.append(cursorGlow);
+
 document.querySelector("#year").textContent = String(new Date().getFullYear());
 
 const navToggle = document.querySelector(".nav-toggle");
@@ -71,6 +75,33 @@ const revealObserver = new IntersectionObserver(
 document.querySelectorAll(".reveal").forEach((element) => {
   revealObserver.observe(element);
 });
+
+const hero = document.querySelector(".hero-section");
+const interactiveZones = document.querySelectorAll(".hero-copy, .hero-panel, .service-card, .pricing-card, .contact-shell, .contact-panel");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+if (!prefersReducedMotion) {
+  document.addEventListener("pointermove", (event) => {
+    cursorGlow.style.transform = `translate(${event.clientX - 90}px, ${event.clientY - 90}px)`;
+
+    if (hero) {
+      const offsetX = (event.clientX / window.innerWidth - 0.5) * 18;
+      const offsetY = (event.clientY / window.innerHeight - 0.5) * 18;
+      hero.style.setProperty("--hero-shift-x", `${offsetX}px`);
+      hero.style.setProperty("--hero-shift-y", `${offsetY}px`);
+    }
+  });
+
+  interactiveZones.forEach((zone) => {
+    zone.addEventListener("pointerenter", () => {
+      cursorGlow.classList.add("is-active");
+    });
+
+    zone.addEventListener("pointerleave", () => {
+      cursorGlow.classList.remove("is-active");
+    });
+  });
+}
 
 const form = document.querySelector("#contact-form");
 const status = document.querySelector("#form-status");
