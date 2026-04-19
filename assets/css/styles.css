@@ -649,6 +649,68 @@ h3 {
   max-width: 48rem;
 }
 
+.section-shell {
+  position: relative;
+  padding: clamp(1.4rem, 3vw, 2.1rem);
+  border-radius: calc(var(--radius-lg) + 2px);
+  border: 1px solid rgba(120, 161, 196, 0.11);
+  box-shadow: 0 28px 84px rgba(3, 9, 17, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  overflow: hidden;
+}
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.section-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+.section-shell-deep {
+  background:
+    linear-gradient(180deg, rgba(7, 13, 24, 0.96), rgba(8, 16, 29, 0.9)),
+    radial-gradient(circle at 12% 18%, rgba(41, 182, 246, 0.08), transparent 20%);
+}
+
+.section-shell-deep::before {
+  background:
+    linear-gradient(rgba(111, 159, 213, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111, 159, 213, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.24;
+}
+
+.section-shell-grid {
+  background:
+    linear-gradient(180deg, rgba(11, 17, 31, 0.96), rgba(9, 15, 28, 0.9)),
+    radial-gradient(circle at 84% 20%, rgba(139, 92, 246, 0.09), transparent 18%);
+}
+
+.section-shell-grid::before {
+  background:
+    radial-gradient(circle at 20% 72%, rgba(41, 182, 246, 0.08), transparent 16%),
+    linear-gradient(rgba(111, 159, 213, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111, 159, 213, 0.035) 1px, transparent 1px);
+  background-size: auto, 36px 36px, 36px 36px;
+  opacity: 0.3;
+}
+
+.section-shell-spotlight {
+  background:
+    linear-gradient(180deg, rgba(12, 16, 31, 0.98), rgba(10, 16, 29, 0.92)),
+    radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.12), transparent 24%);
+}
+
+.section-shell-spotlight::before {
+  background:
+    radial-gradient(circle at 18% 40%, rgba(41, 182, 246, 0.07), transparent 20%),
+    radial-gradient(circle at 80% 22%, rgba(139, 92, 246, 0.08), transparent 18%);
+}
+
 .section-kicker {
   margin: -1rem 0 1.25rem;
   color: #9bc4ea;
@@ -1067,13 +1129,17 @@ textarea {
 }
 
 .hero-actions {
-  gap: 1rem;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.9rem;
+  align-items: stretch;
+  max-width: 34rem;
 }
 
 .hero-actions .button {
   min-height: 3.75rem;
   padding: 1rem 1.5rem;
+  width: 100%;
 }
 
 .button-primary {
@@ -1334,6 +1400,7 @@ textarea {
 
 .services-grid {
   gap: 1.35rem;
+  grid-template-columns: 1fr;
 }
 
 .service-card {
@@ -1398,6 +1465,7 @@ textarea {
 
 .pricing-grid {
   gap: 1.35rem;
+  grid-template-columns: 1fr;
 }
 
 .pricing-card {
@@ -1568,6 +1636,15 @@ textarea {
   .content-layout,
   .contact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-actions {
+    grid-template-columns: max-content max-content;
+    max-width: none;
+  }
+
+  .hero-actions .button {
+    width: auto;
   }
 
   .services-grid {
