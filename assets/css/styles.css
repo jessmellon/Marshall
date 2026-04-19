@@ -1,5 +1,5 @@
 :root {
-  --bg: #05070d;
+  --bg: #03050a;
   --bg-soft: #f4fbff;
   --surface: rgba(12, 14, 24, 0.7);
   --surface-strong: rgba(18, 22, 36, 0.9);
@@ -15,10 +15,10 @@
   --accent-violet-soft: rgba(139, 92, 246, 0.16);
   --accent-soft: rgba(41, 182, 246, 0.14);
   --line: rgba(137, 177, 214, 0.14);
-  --shadow: 0 30px 80px rgba(2, 8, 15, 0.38);
-  --glow: 0 0 0 1px rgba(41, 182, 246, 0.14), 0 18px 36px rgba(41, 182, 246, 0.18);
-  --glow-violet: 0 0 0 1px rgba(139, 92, 246, 0.16), 0 18px 40px rgba(139, 92, 246, 0.18);
-  --frost-glow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 28px 72px rgba(2, 8, 15, 0.36);
+  --shadow: 0 34px 90px rgba(2, 8, 15, 0.46);
+  --glow: 0 0 0 1px rgba(41, 182, 246, 0.2), 0 24px 48px rgba(41, 182, 246, 0.22);
+  --glow-violet: 0 0 0 1px rgba(139, 92, 246, 0.2), 0 24px 52px rgba(139, 92, 246, 0.22);
+  --frost-glow: inset 0 1px 0 rgba(255, 255, 255, 0.08), inset 0 0 0 1px rgba(255, 255, 255, 0.02), 0 32px 82px rgba(2, 8, 15, 0.42);
   --radius-lg: 30px;
   --radius-md: 22px;
   --radius-sm: 16px;
@@ -44,10 +44,10 @@ body {
   font-family: "Instrument Sans", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at 10% 5%, rgba(0, 216, 163, 0.1), transparent 22%),
-    radial-gradient(circle at 85% 10%, rgba(41, 182, 246, 0.16), transparent 24%),
-    radial-gradient(circle at 60% 18%, rgba(139, 92, 246, 0.14), transparent 18%),
-    linear-gradient(180deg, #05070d 0%, #090d17 28%, #0d1320 56%, #0d1726 100%);
+    radial-gradient(circle at 10% 5%, rgba(0, 216, 163, 0.11), transparent 20%),
+    radial-gradient(circle at 85% 10%, rgba(41, 182, 246, 0.2), transparent 24%),
+    radial-gradient(circle at 60% 18%, rgba(139, 92, 246, 0.18), transparent 20%),
+    linear-gradient(180deg, #02040a 0%, #060913 24%, #0a1020 55%, #0b1323 100%);
   line-height: 1.6;
   min-height: 100vh;
   overflow-x: hidden;
@@ -192,9 +192,10 @@ textarea {
 
 .hero-section::before {
   background:
-    radial-gradient(circle at calc(20% + var(--hero-shift-x)) calc(18% + var(--hero-shift-y)), rgba(41, 182, 246, 0.24), transparent 26%),
-    radial-gradient(circle at calc(82% - var(--hero-shift-x)) calc(14% - var(--hero-shift-y)), rgba(139, 92, 246, 0.2), transparent 22%),
-    linear-gradient(135deg, rgba(10, 16, 27, 0.36), rgba(10, 16, 27, 0.08));
+    radial-gradient(circle at calc(20% + var(--hero-shift-x)) calc(18% + var(--hero-shift-y)), rgba(41, 182, 246, 0.34), transparent 28%),
+    radial-gradient(circle at calc(82% - var(--hero-shift-x)) calc(14% - var(--hero-shift-y)), rgba(139, 92, 246, 0.28), transparent 24%),
+    radial-gradient(circle at 54% 70%, rgba(0, 216, 163, 0.1), transparent 24%),
+    linear-gradient(135deg, rgba(10, 16, 27, 0.46), rgba(10, 16, 27, 0.08));
   animation: heroGlowShift 14s ease-in-out infinite alternate;
 }
 
@@ -234,8 +235,8 @@ textarea {
   width: min(78vw, 980px);
   height: 1px;
   transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent, rgba(41, 182, 246, 0.34), rgba(139, 92, 246, 0.34), transparent);
-  box-shadow: 0 0 18px rgba(41, 182, 246, 0.14);
+  background: linear-gradient(90deg, transparent, rgba(41, 182, 246, 0.5), rgba(139, 92, 246, 0.46), rgba(0, 216, 163, 0.24), transparent);
+  box-shadow: 0 0 22px rgba(41, 182, 246, 0.2), 0 0 36px rgba(139, 92, 246, 0.12);
   pointer-events: none;
 }
 
@@ -531,6 +532,7 @@ h3 {
   font-weight: 700;
   transition: transform 180ms ease, background 180ms ease, color 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
   position: relative;
+  overflow: hidden;
 }
 
 .button:hover,
@@ -545,10 +547,26 @@ h3 {
   animation: buttonPulse 3.2s ease-in-out infinite;
 }
 
+.button-primary::after {
+  content: "";
+  position: absolute;
+  inset: -40% auto -40% -25%;
+  width: 38%;
+  transform: skewX(-24deg);
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.34), transparent);
+  opacity: 0;
+}
+
 .button-primary:hover,
 .button-primary:focus-visible {
   background: linear-gradient(135deg, #4bc7ff, #9567ff);
-  box-shadow: 0 0 0 1px rgba(75, 199, 255, 0.18), 0 24px 46px rgba(41, 182, 246, 0.18), 0 18px 42px rgba(139, 92, 246, 0.16);
+  box-shadow: 0 0 0 1px rgba(75, 199, 255, 0.22), 0 28px 54px rgba(41, 182, 246, 0.24), 0 22px 46px rgba(139, 92, 246, 0.2), 0 0 32px rgba(41, 182, 246, 0.18);
+}
+
+.button-primary:hover::after,
+.button-primary:focus-visible::after {
+  opacity: 1;
+  animation: buttonShimmer 900ms ease;
 }
 
 .button-secondary {
@@ -670,10 +688,24 @@ h3 {
   z-index: 1;
 }
 
+.section-shell::after {
+  content: "";
+  position: absolute;
+  inset: auto 10% -18% 10%;
+  height: 8rem;
+  border-radius: 999px;
+  filter: blur(48px);
+  pointer-events: none;
+}
+
 .section-shell-deep {
   background:
     linear-gradient(180deg, rgba(7, 13, 24, 0.96), rgba(8, 16, 29, 0.9)),
     radial-gradient(circle at 12% 18%, rgba(41, 182, 246, 0.08), transparent 20%);
+}
+
+.section-shell-deep::after {
+  background: radial-gradient(circle, rgba(41, 182, 246, 0.12), transparent 66%);
 }
 
 .section-shell-deep::before {
@@ -690,6 +722,10 @@ h3 {
     radial-gradient(circle at 84% 20%, rgba(139, 92, 246, 0.09), transparent 18%);
 }
 
+.section-shell-grid::after {
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.12), transparent 66%);
+}
+
 .section-shell-grid::before {
   background:
     radial-gradient(circle at 20% 72%, rgba(41, 182, 246, 0.08), transparent 16%),
@@ -703,6 +739,10 @@ h3 {
   background:
     linear-gradient(180deg, rgba(12, 16, 31, 0.98), rgba(10, 16, 29, 0.92)),
     radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.12), transparent 24%);
+}
+
+.section-shell-spotlight::after {
+  background: radial-gradient(circle, rgba(41, 182, 246, 0.14), rgba(139, 92, 246, 0.1), transparent 68%);
 }
 
 .section-shell-spotlight::before {
@@ -754,6 +794,7 @@ h3 {
     var(--surface);
   min-height: 100%;
   padding-top: 1.2rem;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), inset 0 -18px 28px rgba(0, 0, 0, 0.14), var(--frost-glow);
 }
 
 .service-card::before {
@@ -789,10 +830,12 @@ h3 {
 .faq-item:hover,
 .testimonial-card:hover,
 .content-card:hover,
-.contact-panel:hover {
-  transform: translateY(-4px);
+.contact-panel:hover,
+.trust-card:hover,
+.hero-side-card:hover {
+  transform: translateY(-6px) scale(1.012);
   border-color: rgba(75, 199, 255, 0.2);
-  box-shadow: 0 24px 64px rgba(2, 8, 15, 0.44), 0 0 0 1px rgba(139, 92, 246, 0.08);
+  box-shadow: 0 28px 76px rgba(2, 8, 15, 0.5), 0 0 0 1px rgba(139, 92, 246, 0.12), 0 0 28px rgba(41, 182, 246, 0.12);
 }
 
 .card-icon,
@@ -1110,12 +1153,15 @@ textarea {
   background:
     linear-gradient(180deg, rgba(9, 13, 24, 0.95), rgba(10, 16, 29, 0.86)),
     radial-gradient(circle at 10% 10%, rgba(41, 182, 246, 0.14), transparent 24%),
-    radial-gradient(circle at 88% 20%, rgba(139, 92, 246, 0.16), transparent 28%);
+    radial-gradient(circle at 88% 20%, rgba(139, 92, 246, 0.16), transparent 28%),
+    linear-gradient(120deg, rgba(41, 182, 246, 0.04), transparent 24%, rgba(139, 92, 246, 0.06) 72%, rgba(0, 216, 163, 0.04));
 }
 
 .hero-copy h1 {
-  font-size: clamp(3.35rem, 9vw, 6.4rem);
+  font-size: clamp(3.5rem, 9vw, 6.8rem);
   max-width: 11ch;
+  letter-spacing: -0.038em;
+  text-shadow: 0 0 28px rgba(41, 182, 246, 0.08);
 }
 
 .hero-text {
@@ -1215,6 +1261,7 @@ textarea {
     linear-gradient(180deg, rgba(13, 21, 36, 0.96), rgba(10, 16, 29, 0.92)),
     linear-gradient(135deg, rgba(41, 182, 246, 0.06), rgba(139, 92, 246, 0.08));
   overflow: hidden;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 26px 68px rgba(3, 8, 18, 0.4), 0 0 40px rgba(41, 182, 246, 0.08);
 }
 
 .hero-console::before {
@@ -1261,7 +1308,7 @@ textarea {
   margin-top: 0;
   margin-bottom: 1rem;
   border: 1px solid rgba(127, 173, 214, 0.12);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 22px 48px rgba(4, 11, 20, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), inset 0 0 22px rgba(139, 92, 246, 0.06), 0 22px 48px rgba(4, 11, 20, 0.34), 0 0 28px rgba(41, 182, 246, 0.1);
 }
 
 .build-ring-a {
@@ -1298,7 +1345,7 @@ textarea {
   aspect-ratio: 1;
   clip-path: polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0 50%);
   background: linear-gradient(135deg, rgba(41, 182, 246, 0.4), rgba(139, 92, 246, 0.16));
-  box-shadow: 0 0 12px rgba(41, 182, 246, 0.15);
+  box-shadow: 0 0 16px rgba(41, 182, 246, 0.18), 0 0 18px rgba(139, 92, 246, 0.08);
 }
 
 .hero-console-grid {
@@ -1348,6 +1395,7 @@ textarea {
   border-radius: 1.25rem;
   border: 1px solid rgba(127, 173, 214, 0.12);
   background: linear-gradient(180deg, rgba(14, 21, 36, 0.9), rgba(10, 16, 28, 0.78));
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), 0 0 24px rgba(139, 92, 246, 0.08);
 }
 
 .trust-section::before {
@@ -1451,6 +1499,7 @@ textarea {
   background:
     linear-gradient(180deg, rgba(14, 21, 35, 0.96), rgba(9, 15, 28, 0.86)),
     rgba(255, 255, 255, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), inset 0 -14px 24px rgba(0,0,0,0.12), var(--frost-glow);
 }
 
 .step-number {
@@ -1475,6 +1524,7 @@ textarea {
     linear-gradient(180deg, rgba(13, 20, 34, 0.96), rgba(9, 15, 27, 0.86)),
     rgba(255, 255, 255, 0.03);
   overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), inset 0 -16px 28px rgba(0,0,0,0.14), var(--frost-glow);
 }
 
 .pricing-card::before {
@@ -1487,6 +1537,7 @@ textarea {
 
 .pricing-card.featured {
   transform: translateY(-0.15rem);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03), 0 28px 78px rgba(7, 18, 31, 0.54), 0 0 0 1px rgba(139, 92, 246, 0.2), 0 0 34px rgba(139, 92, 246, 0.16);
 }
 
 .pricing-card.featured::after {
@@ -1511,6 +1562,7 @@ textarea {
 .faq-item {
   padding: 0;
   overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02), inset 0 -12px 22px rgba(0,0,0,0.12), var(--frost-glow);
 }
 
 .faq-item summary {
@@ -1603,7 +1655,16 @@ textarea {
     box-shadow: var(--glow);
   }
   50% {
-    box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.18), 0 18px 36px rgba(139, 92, 246, 0.16);
+    box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.2), 0 22px 42px rgba(139, 92, 246, 0.18), 0 0 26px rgba(41, 182, 246, 0.1);
+  }
+}
+
+@keyframes buttonShimmer {
+  0% {
+    transform: translateX(-140%) skewX(-24deg);
+  }
+  100% {
+    transform: translateX(340%) skewX(-24deg);
   }
 }
 
