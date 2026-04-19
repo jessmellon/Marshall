@@ -115,22 +115,15 @@ textarea {
 }
 
 .brand-logo-shell {
-  width: clamp(5.5rem, 14vw, 8rem);
-  aspect-ratio: 1.65 / 1;
-  overflow: hidden;
+  width: clamp(5.25rem, 13vw, 7rem);
+  height: clamp(3rem, 7vw, 4.15rem);
   flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.brand-logo {
-  width: 185%;
-  max-width: none;
-  height: 185%;
-  object-fit: cover;
-  object-position: center;
-  transform: scale(1.02);
+  display: block;
+  border-radius: 0.9rem;
+  background-image: url("./images/logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 182%;
   filter: drop-shadow(0 0 16px rgba(41, 182, 246, 0.16));
 }
 
@@ -846,21 +839,15 @@ textarea {
 }
 
 .footer-logo-shell {
-  width: 4.8rem;
-  aspect-ratio: 1.65 / 1;
-  overflow: hidden;
+  width: 4.6rem;
+  height: 2.8rem;
   flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-logo {
-  width: 185%;
-  max-width: none;
-  height: 185%;
-  object-fit: cover;
-  object-position: center;
+  display: block;
+  border-radius: 0.75rem;
+  background-image: url("./images/logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 182%;
   filter: drop-shadow(0 0 12px rgba(139, 92, 246, 0.14));
 }
 
