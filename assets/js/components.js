@@ -46,7 +46,7 @@ function renderSectionHeader(label, title, intro) {
 
 export function renderServices() {
   return `
-    <section class="content-section" id="services">
+    <section class="content-section section-band section-band-deep" id="services">
       <div class="container">
         ${renderSectionHeader(
           "Services",
@@ -73,7 +73,7 @@ export function renderServices() {
 
 export function renderAbout() {
   return `
-    <section class="content-section" id="about">
+    <section class="content-section section-band section-band-frost" id="about">
       <div class="container">
         ${renderSectionHeader(
           "About",
@@ -98,7 +98,7 @@ export function renderAbout() {
 
 export function renderProcess() {
   return `
-    <section class="content-section" id="process">
+    <section class="content-section section-band section-band-grid" id="process">
       <div class="container">
         ${renderSectionHeader(
           "Process",
@@ -125,7 +125,7 @@ export function renderProcess() {
 
 export function renderPricing() {
   return `
-    <section class="content-section" id="pricing">
+    <section class="content-section section-band section-band-spotlight" id="pricing">
       <div class="container">
         ${renderSectionHeader(
           "Pricing",
@@ -162,7 +162,7 @@ export function renderPricing() {
 
 export function renderTestimonials() {
   return `
-    <section class="content-section" id="testimonials">
+    <section class="content-section section-band section-band-frost" id="testimonials">
       <div class="container">
         ${renderSectionHeader(
           "Testimonials",
@@ -190,7 +190,7 @@ export function renderTestimonials() {
 
 export function renderFaq() {
   return `
-    <section class="content-section" id="faq">
+    <section class="content-section section-band section-band-grid" id="faq">
       <div class="container">
         ${renderSectionHeader(
           "FAQ",
@@ -216,7 +216,7 @@ export function renderFaq() {
 
 export function renderContact() {
   return `
-    <section class="content-section" id="contact">
+    <section class="content-section section-band section-band-deep" id="contact">
       <div class="container">
         ${renderSectionHeader(
           "Contact",

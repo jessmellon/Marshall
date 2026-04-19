@@ -15,6 +15,7 @@
   --line: rgba(137, 177, 214, 0.16);
   --shadow: 0 30px 80px rgba(2, 8, 15, 0.38);
   --glow: 0 0 0 1px rgba(41, 182, 246, 0.14), 0 18px 36px rgba(41, 182, 246, 0.18);
+  --frost-glow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 28px 72px rgba(2, 8, 15, 0.36);
   --radius-lg: 30px;
   --radius-md: 22px;
   --radius-sm: 16px;
@@ -194,6 +195,49 @@ textarea {
   padding: 5rem 0;
 }
 
+.content-section {
+  position: relative;
+}
+
+.content-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.section-band::before {
+  inset: 1rem 0;
+  border-top: 1px solid rgba(130, 173, 212, 0.08);
+  border-bottom: 1px solid rgba(130, 173, 212, 0.05);
+}
+
+.section-band-deep::before {
+  background:
+    radial-gradient(circle at 20% 30%, rgba(41, 182, 246, 0.08), transparent 20%),
+    linear-gradient(180deg, rgba(5, 14, 24, 0.28), rgba(7, 18, 31, 0.1));
+}
+
+.section-band-frost::before {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+    radial-gradient(circle at 80% 40%, rgba(0, 229, 168, 0.06), transparent 20%);
+}
+
+.section-band-grid::before {
+  background:
+    linear-gradient(rgba(124, 167, 202, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 167, 202, 0.045) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.8) 18%, rgba(0, 0, 0, 0.8) 82%, transparent);
+}
+
+.section-band-spotlight::before {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(41, 182, 246, 0.12), transparent 28%),
+    linear-gradient(180deg, rgba(7, 18, 31, 0.08), rgba(7, 18, 31, 0.16));
+}
+
 .hero-grid {
   display: grid;
   gap: 1.6rem;
@@ -208,11 +252,13 @@ textarea {
 .contact-shell,
 .faq-item,
 .service-card,
-.step-card {
+.step-card,
+.testimonial-card,
+.contact-panel {
   background: var(--surface);
   border: 1px solid rgba(120, 161, 196, 0.12);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(18px) saturate(120%);
 }
 
 .hero-copy {
@@ -223,6 +269,7 @@ textarea {
     radial-gradient(circle at top right, rgba(41, 182, 246, 0.2), transparent 36%);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .hero-copy::before {
@@ -384,6 +431,7 @@ h3 {
   background:
     linear-gradient(180deg, rgba(10, 21, 36, 0.92), rgba(11, 27, 45, 0.86)),
     var(--surface);
+  box-shadow: var(--frost-glow);
 }
 
 .panel-card {
@@ -391,6 +439,7 @@ h3 {
   border-radius: 1.4rem;
   padding: 1.45rem;
   border: 1px solid rgba(120, 161, 196, 0.12);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .panel-note {
@@ -447,6 +496,7 @@ h3 {
   border-radius: var(--radius-md);
   padding: 1.55rem;
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  box-shadow: var(--frost-glow);
 }
 
 .service-card p,
@@ -493,6 +543,14 @@ h3 {
 .content-layout {
   display: grid;
   gap: 1.15rem;
+}
+
+.content-card,
+.faq-item,
+.testimonial-card {
+  background:
+    linear-gradient(180deg, rgba(16, 31, 50, 0.9), rgba(10, 21, 36, 0.82)),
+    var(--surface);
 }
 
 .content-card strong,
@@ -582,6 +640,7 @@ h3 {
   background:
     linear-gradient(180deg, rgba(11, 27, 45, 0.95), rgba(9, 22, 37, 0.92)),
     var(--surface);
+  box-shadow: 0 32px 90px rgba(3, 9, 17, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .contact-grid {
@@ -671,6 +730,7 @@ textarea {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(120, 161, 196, 0.1);
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  box-shadow: var(--frost-glow);
 }
 
 .site-footer {
@@ -774,6 +834,11 @@ textarea {
   .hero-grid {
     grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
     gap: 2rem;
+  }
+
+  .section-band::before {
+    inset: 1.25rem 0;
+    border-radius: 2rem;
   }
 }
 
